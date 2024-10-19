@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Tip Calculator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This is a tip calculator application built with React, TypeScript, and Tailwind CSS. It allows users to add dishes to their order, automatically calculate the total, and select a tip of 10%, 20%, or 50%. The total updates automatically based on the selected tip.
 
-Currently, two official plugins are available:
+## Preview
+<img src="preview.png" alt="Preview of Tip Calculator App" width="600" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Add Dishes**: Users can add menu items to their order.
+- **Automatic Total Calculation**: The total is automatically calculated as items are added and the tip is selected.
+- **Tip Selection**: Users can choose between a 10%, 20%, or 50% tip, and the total updates accordingly.
+- **Order State Management**: The `useOrder` hook manages the order state and related functions.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: A library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Tailwind CSS**: A CSS framework for creating custom designs.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## How to Run the Project
+
+1. Clone the repository:
+```bash
+git clone https://github.com/AlfonsoVidrio/tip-calculator
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Navigate to the project folder:
+```bash
+cd tip-calculator
+```
+3. Install the dependencies:
+```bash
+npm install
+```
+4. Run the application:
+```bash
+npm run dev
 ```
