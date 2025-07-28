@@ -1,69 +1,104 @@
-# React + TypeScript + Vite
+# 🧾 Tip Calculator & Order Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application for calculating tips and managing restaurant orders, built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 📸 Screenshot
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img width="1920" height="1562" alt="screencapture-alfonsovidrio-github-io-tip-calculator-2025-07-27-23_41_59" src="https://github.com/user-attachments/assets/aad23cac-bb51-4ab6-bc8c-bc522a156c30" />
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🍽️ **Menu Management**: View and select dishes from the menu
+- 🛒 **Shopping Cart**: Add and remove items from your order
+- 💰 **Tip Calculation**: Choose between 10%, 20%, or 50% tip
+- 🧮 **Automatic Totals**: Automatic calculation of subtotal, tip, and total
+- 📱 **Responsive Design**: Works perfectly on desktop and mobile
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technologies Used
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 18** - User interface library
+- **TypeScript** - Typed superset of JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+  
+## 🚀 Installation and Setup
+
+### Prerequisites
+
+- Node.js (version 16 or higher)
+- npm or yarn
+
+### Installation Steps
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/AlfonsoVidrio/tip-calculator.git
+   cd tip-calculator
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+
+   ```text
+   http://localhost:5173
+   ```
+## 📁 Project Structure
+
+```text
+tip-calculator/
+├── public/                 # Static files
+├── src/
+│   ├── components/         # React components
+│   │   ├── MenuItem.tsx
+│   │   ├── OrderContents.tsx
+│   │   ├── OrderTotals.tsx
+│   │   └── TipPercentageForm.tsx
+│   ├── data/              # Menu data
+│   │   └── db.ts
+│   ├── helpers/           # Utility functions
+│   │   └── index.ts
+│   ├── hooks/             # Custom hooks
+│   │   └── useOrder.ts
+│   ├── types/             # TypeScript type definitions
+│   │   └── index.ts
+│   ├── App.tsx           # Main component
+│   ├── main.tsx          # Entry point
+│   └── index.css         # Global styles
+├── package.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎮 How to Use the Application
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Select Dishes**: Click on menu items to add them to your order
+2. **Review Order**: See selected items in the right panel
+3. **Remove Items**: Use the "✕" button to remove items from the order
+4. **Calculate Tip**: Select the desired tip percentage (10%, 20%, 50%)
+5. **View Totals**: Review the automatically calculated subtotal, tip, and total
+6. **Save Order**: Finalize your order with the "Save Order" button
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+## 📦 Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server
+
+# Build
+npm run build        # Build application for production
+npm run preview      # Preview production build
+npm run deploy      # Deploy to GitHub Pages
 ```
